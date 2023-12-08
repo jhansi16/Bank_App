@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Banking System</title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #007BFF;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .container {
+            margin-top: 20px;
+			margin-bottom:10px;
+        }
+
+        .panel {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .panel h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem; /* Increase font size for a professional look */
+            color: #007BFF; /* Use a different color for the heading */
+        }
+
+        .panel a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .panel img {
+            max-width: 100%;
+            max-height: 150px; /* Set a maximum height for consistency */
+            object-fit: contain; /* Ensure all images fit the same space */
+            margin-bottom: 10px;
+            width: 100%; /* Add this line to ensure images have equal width */
+            height: 100%; /* Add this line to ensure images have equal height */
+        }
+		
+		.equal-image {
+        max-width: 100%;
+        max-height: 120px;
+        object-fit: contain;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 8px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+			margin-top:30;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+        <i class="fa fa-university" style="font-size:36px"></i> Banking System
+		</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/feedback">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+		<div class="container mt-5">
+        <!-- Professional Create Account Panel -->
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">Create Account</h4>
+            <p>Your must create an account to proceed further. Click <a href="/createaccount">here</a> to create an account.</p>
+        </div>
+
+        <!-- Rest of your content goes here -->
+    </div>
+        <div class="row">
+		<div class="col-md-3">
+                <div class="panel">
+                    <h3>Account Details</h3>
+                    <a href="/accountdetails">
+                        <img src="account_details_image.jpg" alt="Account Details" class="equal-image">
+                    </a>
+                </div>
+            </div>
+			<div class="col-md-3">
+                <div class="panel">
+                    <h3>Banking Statement</h3>
+                    <a href="/statement">
+                        <img src="banking_statement_image.jpg" alt="Banking Statement" class="equal-image">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+			    <div class="panel">
+                    <h3>Transactions</h3>
+                    <a href="/transactions">
+                        <img src="transaction_image.jpg" alt="Transactions" class="equal-image">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="panel">
+                    <h3>Fund Transfer</h3>
+                    <a href="/fundtransfer">
+                        <img src="transfer.png" alt="Fund Transfer" class="equal-image">
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panel">
+                    <h3>Bill Payments</h3>
+                    <a href="/billpay">
+                        <img src="bill_payments_image.jpg" alt="Bill Payments" class="equal-image">
+                    </a>
+                </div>
+            </div>
+            
+            
+            <div class="col-md-3">
+                <div class="panel">
+                    <h3>View Bills</h3>
+                    <a href="/viewbills">
+                        <img src="banking_statement_image.jpg" alt="View Bills" class="equal-image">
+                    </a>
+                </div>
+            </div>
+			<div class="col-md-3">
+                <div class="panel">
+                    <h3>Feedback</h3>
+                    <a href="/feedback">
+                        <img src="download.png" alt="Feedback" class="equal-image">
+                    </a>
+                </div>
+            </div>
+			<div class="col-md-3">
+                <div class="panel">
+                    <h3>Contact Us</h3>
+                    <a href="/contactus">
+                        <img src="contact.png" alt="Logout" class="equal-image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Your Bank. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

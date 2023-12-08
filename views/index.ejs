@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+	<style>
+        /* ... (existing styles) ... */
+        .image-panel {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+        .image-section {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .budget-info, .chart-panel {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .chart-panel canvas {
+            max-width: 100%;
+            height: auto;
+        }
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .title-bar {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .intro-panel {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        .image-panel {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+        .image-panel img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .budget-info {
+            margin-top: 40px;
+        }
+        .chart-panel {
+            margin-top: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+		 
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+        <i class="fa fa-university" style="font-size:36px"></i> Banking System
+		</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a> <!-- Link to login page -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a> <!-- Link to register page -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="title-bar">
+            <h1>Welcome to the Banking System</h1>
+        </div>
+        
+        <div class="image-panel">
+        <div class="image-section">
+            <img src="2.jpeg" alt="Bank Image 1" style="width: 400px; height: 400px;">
+            <p>Explore Our Transactions</p>
+            <p>At XYZ Bank, we pride ourselves on providing a seamless and secure transaction experience. Explore the features that make our transactions exceptional:</p>
+            <ul>
+                <li><strong>Fast and Reliable:</strong> Experience quick and reliable fund transfers.</li>
+                <li><strong>Real-time Updates:</strong> Receive real-time notifications for every transaction.</li>
+                <li><strong>International Transactions:</strong> Seamlessly send and receive money globally.</li>
+                <li><strong>Transaction History:</strong> Access detailed transaction history for easy tracking.</li>
+            </ul>
+            <p>Join us today and enjoy hassle-free banking transactions that fit your lifestyle!</p>
+        </div>
+        <div class="image-section">
+            <img src="1.jpeg" alt="Bank Image 2" style="width: 400px; height: 400px;">
+            <p>Easy Online Services</p>
+            <p>At XYZ Bank, we are committed to providing you with the best banking experience. Here's why you should choose our services:</p>
+            <ul>
+                <li>Secure and User-Friendly Online Transactions</li>
+                <li>24/7 Access to Your Account and Transaction History</li>
+                <li>Personalized Budgeting Tools to Manage Your Finances</li>
+                <li>Quick and Efficient Customer Support</li>
+            </ul>
+            <p>Join us today and experience the future of banking!</p>
+        </div>
+    </div>
+	
+    <div class="budget-info">
+        <h2>Budgeting Information</h2>
+        <p>Stay on top of your finances with our budgeting tools. Plan and track your expenses to achieve your financial goals.</p>
+    </div>
+	
+    <div class="chart-panel">
+        <h2>Yearly Progress</h2>
+        <canvas id="yearlyProgressChart"></canvas>
+    </div>
+        
+    </div>
+
+    <script>
+        // Chart.js Example
+        var ctx = document.getElementById('yearlyProgressChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Yearly Progress',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    data: [50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105],
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
